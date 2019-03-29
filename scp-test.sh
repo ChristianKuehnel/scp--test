@@ -8,7 +8,7 @@ TARGET_HOST=$1
 START_TIME=$(date --rfc-3339=seconds)
 LOGFILE="$PWD/${HOSTNAME}_${TARGET_HOST}_${START_TIME}.log"
 INPUT_FILE=/tmp/scp-test-input-file
-TARGET_DIR=/tmp/scp-test-target-dir
+TARGET_DIR=/tmp/scp-test-target-dir-${HOSTNAME}
 
 logcmd(){
     $@ > >(tee -a "$LOGFILE") 2> >(tee -a "$LOGFILE" >&2)
