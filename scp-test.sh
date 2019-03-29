@@ -24,7 +24,7 @@ copyfiles() {
     logcmd dd if=/dev/urandom of=$INPUT_FILE bs=1M count=20
     log "copying files..."
     logcmd ssh $TARGET_HOST "mkdir -p $TARGET_DIR"
-    for i in {1..100}
+    for i in {001..100}
     do
         log "upload # $i..."
         logcmd scp -v $INPUT_FILE $TARGET_HOST:$TARGET_DIR/test_$i
